@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Alligator</title>
+		<meta name="description" content="Learn about what you want in as much time as you have" />
+		<meta name="author" content="SUTD" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			<!-- Top Navigation -->
+			<header>
+				<h1>Alligator <span>Learn about what you want in as much time as you have</span></h1>
+			</header>
+			<div class="main clearfix">
+				<form id="nl-form" class="nl-form">
+					I want to learn about
+					<input type="text" value="" placeholder="topic" data-subline="For example: <em>David Hume</em> or <em>Baroque Music</em>"/>
+					<br />and I have
+					<input type="text" value="" placeholder="minutes" data-subline="For example: <em>10</em> or <em>20</em>"/>
+					minutes available.
+					<div class="nl-submit-wrap">
+						<button class="nl-submit" type="submit">Look up links!</button>
+					</div>
+					<div class="nl-overlay"></div>
+				</form>
+			</div>
+		</div><!-- /container -->
+		<script src="js/nlform.js"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+	</body>
+</html>
