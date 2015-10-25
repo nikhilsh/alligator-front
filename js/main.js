@@ -25,18 +25,17 @@ $(".nl-submit").click(function(e) {
 	$('#loading').show();
 	$('#submit-button').hide();
 	$.get("http://alligator.eu-gb.mybluemix.net/query/" + $('#textValue').prop('value') + "/" +  $('#timeValue').prop('value'), function(response) {
-	// links = jQuery.parseJSON(response)
 
-	 $.each(response['results'], function(i,row){
-	 	var array = {
-	 		"summary" : row["abstract"],
-	 		"title" : row["title"],
-	 		"time" : row["time_taken"] ,
-	 		"url" : row["url"],
-	 		"exceeded" : row["exceeded"] ? true : false
-	 	};
-	 	links.push(array);
-	 });
+	 	$.each(response['results'], function(i,row){
+		 	var array = {
+		 		"summary" : row["abstract"],
+		 		"title" : row["title"],
+		 		"time" : row["time_taken"] ,
+		 		"url" : row["url"],
+		 		"exceeded" : row["exceeded"] ? true : false
+		 	};
+		 	links.push(array);
+	 	});
 
 		$(".table-materialize").toggleClass('is-visible');
 		// $(".nl-form").
@@ -57,5 +56,9 @@ $(".nl-submit").click(function(e) {
 
 		$('#search-result').append(htmlRows)
 		$('#loading').hide();
-	}, 'json');
+	}, 'json')
+	.fail(function() {
+		Materialize.toast('Error accessing the server, please refresh the page and try again', 4000)
+	})
+;
 });
