@@ -30,10 +30,9 @@
 					<input type="text" value="" placeholder="minutes" data-subline="For example: <em>10</em> or <em>20</em>"/>
 					 available.
 					<div class="nl-submit-wrap" align="center">
-						<button class="nl-submit" type="submit">Look up links!</button>
+						<button class="nl-submit" type="button">Look up links!</button>
 					</div>
 					<div class="nl-overlay"></div>
-
 				</form>
 				<div class = "table-materialize">
 					<h3 align="center">Your results for [this]</h1>
@@ -79,6 +78,7 @@
 		</script>
 		<script>
 			$(".nl-submit").click(function() {
+				debugger
 				$(".table-materialize").toggleClass('is-visible');
 			});
 		</script>
