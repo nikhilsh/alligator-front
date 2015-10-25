@@ -26,26 +26,24 @@ $(".nl-submit").click(function(e) {
 	$('#submit-button').hide();
 	$.get("http://alligator.eu-gb.mybluemix.net/query/" + $('#textValue').prop('value') + "/" +  $('#timeValue').prop('value'), function(response) {
 	// links = jQuery.parseJSON(response)
+
 	 $.each(response['results'], function(i,row){
 	 	var array = {
 	 		"summary" : row["abstract"],
 	 		"title" : row["title"],
 	 		"time" : row["time_taken"] ,
-	 		"url" : row["url"]
+	 		"url" : row["url"],
+	 		"exceeded" : row["exceeded"] ? true : false
 	 	};
 	 	links.push(array);
 	 });
-		console.log(response)
-		// $('#result-table').empty();
-
-	// $('#result-table').load("index.html #result-table");
 
 		$(".table-materialize").toggleClass('is-visible');
 		// $(".nl-form").
 		$(".nl-form").html('Learning about ' + $('#textValue').prop('value') + ' for ' + $('#timeValue').prop('value') + ' minutes');
 		$('.nl-form').animate({text: '0px'}, 1000);
-		var templateRow = _.template("<tr> \
-				<td><a href= <%= stripTrailingSlash(url) %>><b><%= title %></b></a><br /> \
+		var templateRow = _.template("<tr style=<%= exceeded ? 'color:#BBBBBB;' : '' %> > \
+				<td><a href= <%= stripTrailingSlash(url) %> style= <%= exceeded ? 'color:#BBBBBB;' : '' %>  ><b><%= title %></b></a><br /> \
 				<%= summary %> \
 				</td> \
 				<td><%= time %> minute<%= parseInt(time, 10) > 1 ? 's' : '' %></td> \
