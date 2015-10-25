@@ -19,7 +19,8 @@ td, th {
 }
 
 #logo {
-  width: 400px;
+  width: 70%;
+  max-width: 400px;
 }
 
 .main {
