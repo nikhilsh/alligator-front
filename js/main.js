@@ -47,7 +47,7 @@ $(".nl-submit").click(function(e) {
 				<%= summary %> \
 				</td> \
 				<td><%= time %> minute<%= parseInt(time, 10) > 1 ? 's' : '' %></td> \
-				<td><%= score %> score </td> \
+				<td><%= score %></td> \
 				</tr> ");
 		var htmlRows = ""
 		var temp = ""
