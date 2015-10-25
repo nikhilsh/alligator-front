@@ -32,7 +32,8 @@ $(".nl-submit").click(function(e) {
 		 		"title" : row["title"],
 		 		"time" : row["time_taken"] ,
 		 		"url" : row["url"],
-		 		"exceeded" : row["exceeded"] ? true : false
+		 		"exceeded" : row["exceeded"] ? true : false,
+		 		"score" : row["score"]
 		 	};
 		 	links.push(array);
 	 	});
@@ -46,6 +47,7 @@ $(".nl-submit").click(function(e) {
 				<%= summary %> \
 				</td> \
 				<td><%= time %> minute<%= parseInt(time, 10) > 1 ? 's' : '' %></td> \
+				<td><%= score %> score </td> \
 				</tr> ");
 		var htmlRows = ""
 		var temp = ""
@@ -59,6 +61,10 @@ $(".nl-submit").click(function(e) {
 	}, 'json')
 	.fail(function() {
 		Materialize.toast('Error accessing the server, please refresh the page and try again', 4000)
+		$('#loading').hide();
+		$('#submit-button').show();
+
+
 	})
 ;
 });
