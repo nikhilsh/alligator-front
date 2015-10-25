@@ -272,6 +272,18 @@ input:focus::-ms-input-placeholder {
 	transition-delay: 0s;
 }
 
+.table-materialize {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s 0, visibility 0 0.3s;
+}
+
+.table-materialize.is-visible {
+	visibility: visible;
+  	opacity: 1;
+  	transition: opacity 0.3s 0, visibility 0 0;
+}
+
 @media screen and (max-width: 45em) {
 	.nl-form {
 		font-size: 3em;
@@ -283,3 +295,4 @@ input:focus::-ms-input-placeholder {
 		font-size: 2em;
 	}
 }
+
