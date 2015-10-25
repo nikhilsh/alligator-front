@@ -23,13 +23,14 @@ $(".nl-submit").click(function(e) {
 			return;
 		};
 	$('#loading').show();
+	$('#submit-button').hide();
 	$.get("http://alligator.eu-gb.mybluemix.net/query/" + $('#textValue').prop('value'), function(response) {
 	// links = jQuery.parseJSON(response)
 	 $.each(response['results'], function(i,row){
 	 	var array = {
 	 		"summary" : row["abstract"],
 	 		"title" : row["title"],
-	 		"time" : row["time_taken"],
+	 		"time" : row["time_taken"] ,
 	 		"url" : row["url"]
 	 	};
 	 	links.push(array);
@@ -50,9 +51,12 @@ $(".nl-submit").click(function(e) {
 				<td><%= time %> minutes</td> \
 				</tr> ");
 		var htmlRows = ""
+		var temp = ""
+
 		_.each(links, function (link) {
-			htmlRows += templateRow(link);
+			htmlRows += templateRow(link)["time"] === "unknown minutes" ? "Unknown" : templateRow(link)["time"];
 		})
+
 		$('#search-result').append(htmlRows)
 		$('#loading').hide();
 	}, 'json');
