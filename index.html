@@ -30,7 +30,7 @@
 					<input type="text" value="" placeholder="minutes" data-subline="For example: <em>10</em> or <em>20</em>"/>
 					 available.
 					<div class="nl-submit-wrap" align="center">
-						<button class="nl-submit" type="button">Look up links!</button>
+						<button class="nl-submit" type="submit">Look up links!</button>
 					</div>
 					<div class="nl-overlay"></div>
 				</form>
@@ -77,8 +77,9 @@
 			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
 		</script>
 		<script>
-			$(".nl-submit").click(function() {
+			$(".nl-submit").click(function(e) {
 				debugger
+				e.preventDefault();
 				$(".table-materialize").toggleClass('is-visible');
 			});
 		</script>
