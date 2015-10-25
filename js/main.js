@@ -19,6 +19,10 @@ function stripTrailingSlash(str) {
 }
 $(".nl-submit").click(function(e) {
 	e.preventDefault();
+		if ($('#textValue').prop('value') === "") {
+			return;
+		};
+	$('#loading').show();
 	$.get("http://alligator.eu-gb.mybluemix.net/query/" + $('#textValue').prop('value'), function(response) {
 	// links = jQuery.parseJSON(response)
 	 $.each(response['results'], function(i,row){
@@ -50,6 +54,6 @@ $(".nl-submit").click(function(e) {
 			htmlRows += templateRow(link);
 		})
 		$('#search-result').append(htmlRows)
+		$('#loading').hide();
 	}, 'json');
-	
 });
