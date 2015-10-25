@@ -48,7 +48,7 @@ $(".nl-submit").click(function(e) {
 				<td><a href= <%= stripTrailingSlash(url) %>><b><%= title %></b></a><br /> \
 				<%= summary %> \
 				</td> \
-				<td><%= time %> minutes</td> \
+				<td><%= time %> minute<%= parseInt(time, 10) > 1 ? 's' : '' %></td> \
 				</tr> ");
 		var htmlRows = ""
 		var temp = ""
