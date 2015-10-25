@@ -10,6 +10,7 @@
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -19,16 +20,17 @@
 		<div class="container demo-1">
 			<!-- Top Navigation -->
 			<header>
-				<img src = "images/logo.png" height=8% width=8% />
-				<h1>Alligator <span>Learn about what you want in as much time as you have</span></h1>
+				<img id="logo" src="images/logo.png" />
+
+				<h1><span>Learn about what you want in as much time as you have</span></h1>
 			</header>
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form">
-					I want to learn about
+					<span class="thing">I want to learn about</span>
+					
 					<input type="text" value="" placeholder="topic" data-subline="For example: <em>David Hume</em> or <em>Baroque Music</em>" id="textValue"/>
-					<br />and I have
-					<input type="text" value="" placeholder="x" data-subline="For example: <em>10</em> or <em>20</em>" id="timeValue"/> minutes
-					 available.
+					<br /><span class="thing">and I have</span>
+					<input type="text" value="" placeholder="20" data-subline="For example: <em>10</em> or <em>20</em>" id="timeValue"/><span class="thing"> minutes available.</span>
 					<div class="nl-submit-wrap" align="center">
 						<button class="nl-submit" type="submit">Look up links!</button>
 					</div>
