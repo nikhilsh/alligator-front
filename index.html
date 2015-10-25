@@ -25,9 +25,9 @@
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form">
 					I want to learn about
-					<input type="text" value="" placeholder="topic" data-subline="For example: <em>David Hume</em> or <em>Baroque Music</em>"/>
+					<input type="text" value=" " placeholder="topic" data-subline="For example: <em>David Hume</em> or <em>Baroque Music</em>" id="textValue"/>
 					<br />and I have
-					<input type="text" value="" placeholder="minutes" data-subline="For example: <em>10</em> or <em>20</em>"/>
+					<input type="text" value=" " placeholder="minutes" data-subline="For example: <em>10</em> or <em>20</em>" id="timeValue"/> minutes
 					 available.
 					<div class="nl-submit-wrap" align="center">
 						<button class="nl-submit" type="submit">Look up links!</button>
@@ -35,7 +35,6 @@
 					<div class="nl-overlay"></div>
 				</form>
 				<div class = "table-materialize">
-					<h3 align="center">Your results for [this]</h1>
 			          <table class="responsive">
 			          <thead>
 			            <tr>
@@ -45,43 +44,14 @@
 			            </tr>
 			          </thead>
 
-			          <tbody>
-			            <tr>
-			              <td><b>First Link</b> <br />
-			                Description Summary
-			              </td>
-			              <td>Text</td>
-			              <td>2 minutes</td>
-			            </tr>
-			            <tr>
-			              <td><b>Second Link</b> <br />
-			                Description Summary
-			              </td>
-			              <td>Video</td>
-			              <td>7 minutes</td>
-			            </tr>
-			            <tr>
-			              <td><b>Third Link</b> <br />
-			                Description Summary
-			              </td>
-			              <td>Text</td>
-			              <td>2 minutes</td>
-			            </tr>
+			          <tbody id="search-result">
 			          </tbody>
 			        </table>
 			        </div>
 			</div>
 		</div><!-- /container -->
+		<script src="js/lodash.min.js"></script>
 		<script src="js/nlform.js"></script>
-		<script>
-			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
-		</script>
-		<script>
-			$(".nl-submit").click(function(e) {
-				debugger
-				e.preventDefault();
-				$(".table-materialize").toggleClass('is-visible');
-			});
-		</script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
